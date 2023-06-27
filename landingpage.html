@@ -23,16 +23,16 @@
 			<img src="./images/jazz1.png" alt="jazz-logo" />
 		</header>
 
-		<main>
+		<main class="main">
 			<div class="title-wrap">
 				<h1 class="h1">For the best content</h1>
 				<h2 class="h2">Click below</h2>
 			</div>
 
 			<button class="toggle-wrap">
-				<img src="./images/arrow-down.svg" alt="dropdown" />
-				<img src="./images/arrow-down.svg" alt="dropdown" />
-				<img src="./images/arrow-down.svg" alt="dropdown" />
+				<img src="./images/arrow-down-circled.svg" alt="dropdown" />
+				<img src="./images/arrow-down-circled.svg" alt="dropdown" />
+				<img src="./images/arrow-down-circled.svg" alt="dropdown" />
 			</button>
 
 			<p class="secondary-text">Get access to an extensive collection of premium games</p>
@@ -52,6 +52,29 @@
 
 			<p class="rate">11.95 PKR/Day </p>
 
+			<article class="read-more-wrap">
+				<div class="read-more-button" onclick="toggleReadMoreLess()">
+					<button type="button" class="read-more-box">
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+							stroke="currentColor" class="w-6 h-6 chevron-svg">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+						</svg>
+						<span class="read-more-button-text">Read more</span>
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+							stroke="currentColor" class="w-6 h-6 chevron-svg">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+						</svg>
+					</button>
+
+					<div class="read-more-text-box">
+						<p class="read-more-text">The cost will be added to your mobile phone bill.</p>
+						<p class="read-more-text">You will be able to play the games already downloaded even if you unsusbcribe</p>
+						<p class="read-more-text">Enjoy over 150 top premium games: ads free and without in-app purchases!</p>
+						<p class="read-more-text">You can cancel your subscription at anytime from <a href="#"
+								class="read-more-reference">My account</a> section.</p>
+					</div>
+				</div>
+			</article>
 		</main>
 
 		<footer class="footer">
@@ -82,6 +105,28 @@
 			},
 			separateDialCode: true,
 		});
+	</script>
+
+	<script>
+		function toggleReadMoreLess() {
+			const chevronIcons = document.querySelectorAll('.chevron-svg');
+			const buttonText = document.querySelector(".read-more-button-text");
+			const readMoreText = document.querySelector('.read-more-text-box');
+
+			if (buttonText.innerText === "Read more") {
+				buttonText.innerHTML = "Read less";
+				readMoreText.classList.add('displayed');
+				for (let elem of chevronIcons) {
+					elem.classList.add('active');
+				}
+			} else {
+				buttonText.innerHTML = "Read more";
+				readMoreText.classList.remove('displayed');
+				for (let elem of chevronIcons) {
+					elem.classList.remove('active');
+				}
+			}
+		}
 	</script>
 
 </body>
