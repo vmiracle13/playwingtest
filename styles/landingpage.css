@@ -93,9 +93,9 @@ button {
   font-family: Inter, Arial, Helvetica, Verdana, sans-serif;
 }
 
-/* form */
+/* phone form */
 
-.form {
+.phone-form {
   text-align: center;
   width: 308px;
   margin: auto;
@@ -116,7 +116,7 @@ button {
   text-align: center;
 }
 
-.form .phone {
+.phone-form .phone {
   height: 45px;
   width: 308px;
   background-color: #F8F7FF;
@@ -166,13 +166,13 @@ button {
   font-family: Roboto, Open-Sans, serif;
 }
 
-.confirmed.displayed {
+.confirmed.active {
   display: block;
 }
 
 .confirmed {
   position: absolute;
-  background: #29D884;
+  background-color: #29D884;
   width: 40px;
   height: 100%;
   right: 0;
@@ -195,6 +195,11 @@ button {
   font-size: 1rem;
   font-family: Roboto, Open-Sans, serif;
   font-weight: 700;
+}
+
+.submit-button.active {
+  background-color: #29D884;
+  cursor: pointer;
 }
 
 /* rate text */
@@ -281,4 +286,9 @@ button {
 .copyright {
   color: #BABABA;
   font-size: 10px;
+}
+
+.warning {
+  color: red;
+  font-weight: 700;
 }

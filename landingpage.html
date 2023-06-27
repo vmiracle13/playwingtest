@@ -37,17 +37,21 @@
 
 			<p class="secondary-text">Get access to an extensive collection of premium games</p>
 
-			<form class="form">
+			<form class="phone-form">
 				<label class="label">Enter your phone number:</label>
 				<div class="phone-box">
-					<input class="phone" type="tel" name="phone" title="Required format XXX-XXXXXXX" />
+					<input class="phone" type="tel" name="phone" title="Required format XXXXXXXXX and the length of 9 numbers" />
 
 					<div class="confirmed">
 						<img src="./images/check.svg" alt="check icon" />
 					</div>
 				</div>
 
-				<button type="submit" class="submit-button">GET OTP</button>
+				<button type="submit" class="submit-button" disabled onclick="submitForm()">GET OTP</button>
+			</form>
+
+			<form class="pin-form">
+				Pin form
 			</form>
 
 			<p class="rate">11.95 PKR/Day </p>
@@ -107,6 +111,7 @@
 		});
 	</script>
 
+	<!-- The block for toggle Read more text visibility -->
 	<script>
 		function toggleReadMoreLess() {
 			const chevronIcons = document.querySelectorAll('.chevron-svg');
@@ -126,6 +131,50 @@
 					elem.classList.remove('active');
 				}
 			}
+		}
+	</script>
+
+	<!-- The block to validate the phone number -->
+	<script>
+		const phone = document.querySelector('.phone');
+		phone.onblur = validate;
+
+		function validate() {
+			const phoneNumber = phone.value.trim();
+			const hasNumbersOnly = /^\d+$/.test(phoneNumber);
+
+			const oneWarningAdded = document.querySelector('.warning');
+
+			if (phoneNumber.length === 0 || !hasNumbersOnly) {
+				if (oneWarningAdded) return;
+				const submitButton = document.querySelector('.submit-button');
+				const warning = document.createElement('p');
+				warning.className = "warning";
+				warning.innerHTML = "Please enter the phone number of 9 digits and only with numbers";
+				submitButton.before(warning);
+			}
+
+			if (hasNumbersOnly && phoneNumber.length === 9) {
+				if (oneWarningAdded) oneWarningAdded.remove();
+				const confirmedIcon = document.querySelector('.confirmed');
+				const submitButton = document.querySelector('.submit-button');
+				confirmedIcon.classList.add('active');
+				submitButton.classList.add('active');
+				submitButton.disabled = false;
+			}
+		}
+	</script>
+
+	<!-- The block to send the phone number to get a pin code -->
+	<script>
+		function submitForm() {
+			/*
+			Here we send a request to server to initiate an event of sending sms to the user.
+			Once we receive the positive response, we display the form to enter the pin code.
+			If we receive the negative response (not an error), for instance, the user has been registered,
+			we need to inform the user about it by displaying the corresponding message.
+			This case should be considered with the team and all the cases are described and performed in the application.
+			*/
 		}
 	</script>
 
