@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./styles/landingpage.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+	<title>Welcome to Playwing!</title>
+</head>
+
+<body>
+	<div class="content">
+		<header class="header">
+			<div class="dropdown">
+				<div class="dropbtn">AR</div>
+				<div class="dropdown-content">
+					<a href="#">AR</a>
+					<a href="#">EN</a>
+				</div>
+			</div>
+
+			<img src="./images/jazz1.png" alt="jazz-logo" />
+		</header>
+
+		<main>
+			<div class="title-wrap">
+				<h1 class="h1">For the best content</h1>
+				<h2 class="h2">Click below</h2>
+			</div>
+
+			<button class="toggle-wrap">
+				<img src="./images/arrow-down.svg" alt="dropdown" />
+				<img src="./images/arrow-down.svg" alt="dropdown" />
+				<img src="./images/arrow-down.svg" alt="dropdown" />
+			</button>
+
+			<p class="secondary-text">Get access to an extensive collection of premium games</p>
+
+			<form class="form">
+				<label class="label">Enter your phone number:</label>
+				<div class="phone-box">
+					<input class="phone" type="tel" name="phone" title="Required format XXX-XXXXXXX" />
+
+					<div class="confirmed">
+						<img src="./images/check.svg" alt="check icon" />
+					</div>
+				</div>
+
+				<button type="submit" class="submit-button">GET OTP</button>
+			</form>
+
+			<p class="rate">11.95 PKR/Day </p>
+
+		</main>
+
+		<footer class="footer">
+			<nav class="nav">
+				<a href="#">T&C</a>
+				<a href="#">Contact us</a>
+				<a href="#">Faq</a>
+			</nav>
+
+			<div>
+				<img src="./images//white-logo2.png" alt="bite games logo" class="footer-logo" />
+			</div>
+
+			<copyright class="copyright">@2023 All Rights Reserved</copyright>
+		</footer>
+	</div>
+
+	<!-- scripts of phone codes of various countries -->
+	<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/intlTelInput.min.js"></script>
+	<script>
+		const phoneField = document.querySelector(".phone");
+		window.intlTelInput(phoneField, {
+			utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js",
+			showFlags: false,
+			preferredCountries: ["pk"],
+			customPlaceholder: function (selectedCountryPlaceholder, selectedCountryData) {
+				return "XXX XXX XXX";
+			},
+			separateDialCode: true,
+		});
+	</script>
+
+</body>
+
+</html>

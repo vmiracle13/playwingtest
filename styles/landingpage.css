@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  margin: 0;
+  background-color: #1E2128;
+  font-family: Inter, Arial, Helvetica, Verdana, sans-serif;
+  color: #fff;
+  font-size: 16px;
+  height: 100vh;
+}
+
+.content {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1rem 0.7rem;
+}
+
+/* language switcher */
+
+.dropdown-content {
+  position: absolute;
+  display: none;
+  color: #fff;
+  background-color: #1E2128;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.dropbtn {
+  width: 40px;
+  text-decoration: underline;
+}
+
+.dropdown-content a {
+  padding: 5px;
+  text-decoration: none;
+  display: block;
+  color: #fff;
+}
+
+.dropdown-content a:hover {
+  background-color: #A4A4A4;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.title-wrap {
+  text-align: center;
+}
+
+.h1,
+.h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.toggle-wrap {
+  display: flex;
+  margin: 0.875em auto 2.9em;
+  background-color: transparent;
+  border: none;
+}
+
+.toggle-wrap img {
+  margin-right: 0.5rem;
+}
+
+.secondary-text {
+  margin: 0 4rem 2.5rem;
+  color: #A4A4A4;
+  text-align: center;
+  font-size: 0.75rem;
+  font-family: Inter, Arial, Helvetica, Verdana, sans-serif;
+}
+
+/* form */
+
+.form {
+  text-align: center;
+  width: 308px;
+  margin: auto;
+}
+
+.label {
+  display: block;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.phone-box {
+  position: relative;
+}
+
+.form .iti--separate-dial-code input,
+.phone::placeholder {
+  text-align: center;
+}
+
+.form .phone {
+  height: 45px;
+  width: 308px;
+  background-color: #F8F7FF;
+  border-radius: 6px;
+  border: none;
+}
+
+.phone::placeholder {
+  padding-right: 40px;
+  color: #818181;
+  font-size: 0.875rem;
+  font-family: Roboto, Open-Sans, serif;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.iti__country-list {
+  width: 214px;
+}
+
+.iti__arrow {
+  display: none;
+}
+
+.form .iti--separate-dial-code .iti__selected-flag {
+  background-color: #F8F7FF;
+  color: #818181;
+  font-size: 0.875em;
+  font-family: Roboto, Open-Sans, serif;
+  font-weight: 500;
+}
+
+.iti__flag-container::before {
+  content: " ";
+  position: absolute;
+  background: #D9D9D9;
+  width: 1px;
+  height: 26px;
+  left: 49px;
+  top: 10px;
+  z-index: 2;
+}
+
+.iti__dial-code,
+.iti__country-name {
+  color: #818181;
+  font-family: Roboto, Open-Sans, serif;
+}
+
+.confirmed.displayed {
+  display: block;
+}
+
+.confirmed {
+  position: absolute;
+  background: #29D884;
+  width: 40px;
+  height: 100%;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  line-height: 3.4;
+  display: none;
+}
+
+.submit-button {
+  width: 308px;
+  height: 52px;
+  margin-top: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #797C7B;
+  color: #fff;
+  font-size: 1rem;
+  font-family: Roboto, Open-Sans, serif;
+  font-weight: 700;
+}
+
+/* rate text */
+
+.rate {
+  color: #9A9A9A;
+  font-size: 0.75rem;
+  text-align: center;
+  font-family: Roboto, Open-Sans, serif;
+}
+
+/* footer */
+
+.footer {
+  margin-top: auto;
+  text-align: center;
+  font-family: Roboto, Open-Sans, serif;
+}
+
+.nav {
+  margin: 0 auto 1.375em;
+}
+
+.nav>a {
+  margin: 0 1.2em;
+  color: #BABABA;
+  font-size: 0.875rem;
+  text-decoration-line: underline;
+  text-transform: uppercase;
+}
+
+.footer-logo {
+  width: 70px;
+  height: 14px;
+}
+
+.copyright {
+  color: #BABABA;
+  font-size: 10px;
+}
