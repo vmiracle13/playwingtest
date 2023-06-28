@@ -49,18 +49,19 @@ button {
 }
 
 .dropbtn {
+  margin: 0;
   width: 40px;
   text-decoration: underline;
 }
 
-.dropdown-content a {
+.dropdown-content button {
   padding: 5px;
   text-decoration: none;
   display: block;
   color: #fff;
 }
 
-.dropdown-content a:hover {
+.dropdown-content button:hover {
   background-color: #A4A4A4;
 }
 

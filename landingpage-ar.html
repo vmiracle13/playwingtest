@@ -13,12 +13,13 @@
   <div class="content rtl">
     <header class="header">
       <div class="dropdown">
-        <div class="dropbtn">EN</div>
+        <p class="dropbtn">EN</p>
         <div class="dropdown-content">
-          <a href="#">AR</a>
-          <a href="#">EN</a>
+          <button type="button" onclick="changeTo('rtl')">AR</button>
+          <button type="button" onclick="changeTo('ltr')">EN</button>
         </div>
       </div>
+
 
       <img src="./images/jazz1.png" alt="jazz-logo" />
     </header>
@@ -257,6 +258,17 @@
     /* forward to another page once a user is authorized */
     function subscribe() {
       window.location.href = "homepage.html";
+    }
+  </script>
+
+  <script>
+    function changeTo(str) {
+      const contentBox = document.querySelector('.content');
+      if (str === 'rtl') {
+        contentBox.classList.add('rtl');
+      } else {
+        contentBox.classList.remove('rtl');
+      }
     }
   </script>
 

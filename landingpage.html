@@ -13,10 +13,10 @@
 	<div class="content">
 		<header class="header">
 			<div class="dropdown">
-				<div class="dropbtn">AR</div>
+				<p class="dropbtn">AR</p>
 				<div class="dropdown-content">
-					<a href="#">AR</a>
-					<a href="#">EN</a>
+					<button type="button" onclick="changeTo('rtl')">AR</button>
+					<button type="button" onclick="changeTo('ltr')">EN</button>
 				</div>
 			</div>
 
@@ -261,6 +261,16 @@
 		}
 	</script>
 
+	<script>
+		function changeTo(str) {
+			const contentBox = document.querySelector('.content');
+			if (str === 'rtl') {
+				contentBox.classList.add('rtl');
+			} else {
+				contentBox.classList.remove('rtl');
+			}
+		}
+	</script>
 </body>
 
 </html>
