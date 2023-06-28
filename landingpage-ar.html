@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/landingpage.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+  <title>Welcome to Playwing!</title>
+</head>
+
+<body>
+  <div class="content rtl">
+    <header class="header">
+      <div class="dropdown">
+        <div class="dropbtn">EN</div>
+        <div class="dropdown-content">
+          <a href="#">AR</a>
+          <a href="#">EN</a>
+        </div>
+      </div>
+
+      <img src="./images/jazz1.png" alt="jazz-logo" />
+    </header>
+
+    <main class="main">
+      <div class="title-wrap">
+        <h1 class="h1">لأفضل محتوى</h1>
+        <h2 class="h2">انقر أدناه</h2>
+      </div>
+
+      <button class="toggle-wrap">
+        <img src="./images/arrow-down-circled.svg" alt="dropdown" />
+        <img src="./images/arrow-down-circled.svg" alt="dropdown" />
+        <img src="./images/arrow-down-circled.svg" alt="dropdown" />
+      </button>
+
+      <p class="secondary-text">احصل على مجموعة واسعة من الألعاب المتميزة</p>
+
+      <form class="phone-form">
+        <label class="label">أدخل رقم هاتفك:</label>
+        <div class="phone-box">
+          <input class="phone" type="tel" name="phone" title="Required format XXXXXXXXX and the length of 9 numbers"
+            required />
+
+          <div class="confirmed">
+            <img src="./images/check.svg" alt="check icon" />
+          </div>
+        </div>
+
+        <button type="button" class="submit-button" disabled onclick="submitForm()">احصل على OTP</button>
+      </form>
+
+      <form class="pin-form">
+        <label class="label">أدخل رقم التعريف الشخصي</label>
+
+        <div class="pin-box">
+          <img src="./images/padlock.svg" alt="secure" class="padlock-icon" />
+
+          <div class="pin-cells">
+            <input type="text" maxlength=1 required class="cell" />
+            <input type="text" maxlength=1 required class="cell" />
+            <input type="text" maxlength=1 required class="cell" />
+            <input type="text" maxlength=1 required class="cell" />
+          </div>
+        </div>
+
+        <button type="button" class="submit-button" disabled onclick="subscribe()">يشترك</button>
+      </form>
+
+      <p class="rate">11.95 روبية باكستانية / يوم </p>
+
+      <div class="button-ref-box">
+        <button type="button" class="button-ref">إعادة إرسال الرسائل القصيرة مع رمز PIN</button>
+        <button type="button" class="button-ref">تغيير رقم</button>
+      </div>
+
+      <article class="read-more-wrap">
+        <div class="read-more-button" onclick="toggleReadMoreLess()">
+          <button type="button" class="read-more-box">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-6 h-6 chevron-svg">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            </svg>
+            <span class="read-more-button-text">اقرأ أكثر</span>
+            <span class="read-less-button-text hidden">أقرأ أقل</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-6 h-6 chevron-svg">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            </svg>
+          </button>
+
+          <div class="read-more-text-box">
+            <p class="read-more-text">ستضاف التكلفة إلى فاتورة هاتفك المحمول. ستتمكن من لعب الألعاب</p>
+            <p class="read-more-text">التي تم تنزيلها بالفعل حتى إذا ألغيت الاشتراك استمتع بأكثر من
+            </p>
+            <p class="read-more-text">150 لعبة متميزة: إعلانات مجانية وبدون عمليات شراء داخل</p>
+            <p class="read-more-text">التطبيق! يمكنك إلغاء اشتراكك في أي وقت من قسم حسابي.</p>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <nav class="nav">
+        <a href="#">التعليمات</a>
+        <a href="#">اتصل بنا</a>
+        <a href="#">الشروط والأحكام</a>
+      </nav>
+
+      <div>
+        <img src="./images//white-logo2.png" alt="bite games logo" class="footer-logo" />
+      </div>
+
+      <copyright class="copyright">@ 2023 جميع الحقوق محفوظة</copyright>
+    </footer>
+  </div>
+
+  <!-- scripts of phone codes of various countries -->
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/intlTelInput.min.js"></script>
+  <script>
+    const phoneField = document.querySelector(".phone");
+    window.intlTelInput(phoneField, {
+      utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js",
+      showFlags: false,
+      preferredCountries: ["pk"],
+      customPlaceholder: function (selectedCountryPlaceholder, selectedCountryData) {
+        return "XXX XXX XXX";
+      },
+      separateDialCode: true,
+    });
+  </script>
+
+  <!-- The block for toggle Read more text visibility -->
+  <script>
+    function toggleReadMoreLess() {
+      const chevronIcons = document.querySelectorAll('.chevron-svg');
+      const moreButton = document.querySelector(".read-more-button-text");
+      const lessButton = document.querySelector(".read-less-button-text");
+      const readMoreText = document.querySelector('.read-more-text-box');
+
+      if (lessButton.classList.value.indexOf('hidden') !== -1) {
+        moreButton.classList.add('hidden');
+        lessButton.classList.remove('hidden');
+        readMoreText.classList.add('displayed');
+        for (let elem of chevronIcons) {
+          elem.classList.add('active');
+        }
+      } else {
+        moreButton.classList.remove('hidden');
+        lessButton.classList.add('hidden');
+        readMoreText.classList.remove('displayed');
+        for (let elem of chevronIcons) {
+          elem.classList.remove('active');
+        }
+      }
+    }
+  </script>
+
+  <!-- The block to handle key up event for validation of forms -->
+  <script>
+    function keyupHandler(callback) {
+      let typingTimer;
+      return function () {
+        clearTimeout(typingTimer);
+        if (this.value) {
+          typingTimer = setTimeout(callback, 4000);
+        }
+      }
+    }
+  </script>
+
+  <!-- The block to validate the phone number -->
+  <script>
+    const phone = document.querySelector('.phone');
+    phone.onblur = validate;
+    phone.onkeyup = keyupHandler(validate);
+
+    function validate() {
+      const phoneNumber = phone.value.trim();
+      const hasNumbersOnly = /^\d+$/.test(phoneNumber);
+
+      const oneWarningAdded = document.querySelector('.warning');
+      const confirmedIcon = document.querySelector('.confirmed');
+      const submitButton = document.querySelector('.submit-button');
+
+      if (phoneNumber.length !== 9 || !hasNumbersOnly) {
+        if (oneWarningAdded) return;
+        const submitButton = document.querySelector('.phone-form .submit-button');
+        const warning = document.createElement('p');
+        warning.className = "warning";
+        warning.innerHTML = "Please enter the phone number of 9 digits and only with numbers";
+        submitButton.before(warning);
+        confirmedIcon.classList.remove('active');
+        submitButton.classList.remove('active');
+      }
+
+      if (hasNumbersOnly && phoneNumber.length === 9) {
+        if (oneWarningAdded) oneWarningAdded.remove();
+        confirmedIcon.classList.add('active');
+        submitButton.classList.add('active');
+        submitButton.disabled = false;
+      }
+    }
+  </script>
+
+  <!-- The block to validate the pin -->
+  <script>
+    const cells = document.querySelectorAll('.cell');
+    for (let cell of cells) {
+      cell.onblur = validatePin;
+      cell.onkeyup = keyupHandler(validatePin);
+    }
+
+    function validatePin() {
+      const submitButton = document.querySelector('.pin-form .submit-button');
+      const oneWarningAdded = document.querySelector('.warning');
+      const warning = document.createElement('p');
+      let valueCount = 0;
+
+      for (let cell of cells) {
+        valueCount = !!cell.value ? valueCount + 1 : valueCount;
+        if (!cell.value && !oneWarningAdded) {
+          warning.className = "warning";
+          warning.innerHTML = "Please fill all the digits with the received pin";
+          submitButton.before(warning);
+          submitButton.classList.remove('active');
+        }
+      }
+
+      if (valueCount === cells.length) {
+        submitButton.classList.add('active');
+        submitButton.disabled = false;
+        if (oneWarningAdded) {
+          oneWarningAdded.remove();
+        }
+      }
+    }
+  </script>
+
+  <script>
+    /* The block to send the phone number to get a pin code */
+    function submitForm() {
+      /*
+      Here we send a request to server to initiate an event of sending sms to the user.
+      Once we receive the positive response, we display the form to enter the pin code.
+      If we receive the negative response (not an error), for instance, the user has been registered,
+      we need to inform the user about it by displaying the corresponding message.
+      This case should be considered with the team and all the cases are described and performed in the application.
+      */
+      const pinForm = document.querySelector('.pin-form');
+      const phoneForm = document.querySelector('.phone-form');
+      pinForm.classList.add('active');
+      phoneForm.classList.add('hidden');
+    }
+
+    /* forward to another page once a user is authorized */
+    function subscribe() {
+      window.location.href = "homepage.html";
+    }
+  </script>
+
+</body>
+
+</html>

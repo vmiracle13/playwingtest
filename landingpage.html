@@ -83,6 +83,7 @@
 							<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
 						</svg>
 						<span class="read-more-button-text">Read more</span>
+						<span class="read-less-button-text hidden">Read less</span>
 						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
 							stroke="currentColor" class="w-6 h-6 chevron-svg">
 							<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -135,17 +136,20 @@
 	<script>
 		function toggleReadMoreLess() {
 			const chevronIcons = document.querySelectorAll('.chevron-svg');
-			const buttonText = document.querySelector(".read-more-button-text");
+			const moreButton = document.querySelector(".read-more-button-text");
+			const lessButton = document.querySelector(".read-less-button-text");
 			const readMoreText = document.querySelector('.read-more-text-box');
 
-			if (buttonText.innerText === "Read more") {
-				buttonText.innerHTML = "Read less";
+			if (lessButton.classList.value.indexOf('hidden') !== -1) {
+				moreButton.classList.add('hidden');
+				lessButton.classList.remove('hidden');
 				readMoreText.classList.add('displayed');
 				for (let elem of chevronIcons) {
 					elem.classList.add('active');
 				}
 			} else {
-				buttonText.innerHTML = "Read more";
+				moreButton.classList.remove('hidden');
+				lessButton.classList.add('hidden');
 				readMoreText.classList.remove('displayed');
 				for (let elem of chevronIcons) {
 					elem.classList.remove('active');

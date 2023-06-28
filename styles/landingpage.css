@@ -21,6 +21,10 @@ button {
   flex-direction: column;
 }
 
+.content.rtl {
+  direction: rtl;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -28,6 +32,10 @@ button {
 }
 
 /* language switcher */
+
+.content.rtl .dropdown {
+  order: 1;
+}
 
 .dropdown-content {
   position: absolute;
@@ -117,7 +125,7 @@ button {
 .label {
   display: block;
   margin-bottom: 1rem;
-  text-align: left;
+  text-align: start;
 }
 
 .phone-box {
@@ -239,6 +247,10 @@ button {
   margin-right: 1rem;
 }
 
+.content.rtl .padlock-icon {
+  order: 1;
+}
+
 .pin-cells {
   display: flex;
 }
@@ -305,9 +317,15 @@ button {
   transform: rotate(180deg);
 }
 
-.read-more-button-text {
+.read-more-button-text,
+.read-less-button-text {
   margin: 0 1rem;
   text-decoration: underline;
+}
+
+.read-less-button-text.hidden,
+.read-more-button-text.hidden {
+  display: none;
 }
 
 .read-more-text-box {
