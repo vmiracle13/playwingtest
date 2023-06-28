@@ -154,10 +154,24 @@
 		}
 	</script>
 
+	<!-- The block to handle key up event for validation of forms -->
+	<script>
+		function keyupHandler(callback) {
+			let typingTimer;
+			return function () {
+				clearTimeout(typingTimer);
+				if (this.value) {
+					typingTimer = setTimeout(callback, 4000);
+				}
+			}
+		}
+	</script>
+
 	<!-- The block to validate the phone number -->
 	<script>
 		const phone = document.querySelector('.phone');
 		phone.onblur = validate;
+		phone.onkeyup = keyupHandler(validate);
 
 		function validate() {
 			const phoneNumber = phone.value.trim();
@@ -187,12 +201,12 @@
 		}
 	</script>
 
-
 	<!-- The block to validate the pin -->
 	<script>
 		const cells = document.querySelectorAll('.cell');
 		for (let cell of cells) {
 			cell.onblur = validatePin;
+			cell.onkeyup = keyupHandler(validatePin);
 		}
 
 		function validatePin() {
