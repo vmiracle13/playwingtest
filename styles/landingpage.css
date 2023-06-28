@@ -106,6 +106,14 @@ button {
   display: none;
 }
 
+.phone-form.hidden~.read-more-wrap {
+  align-items: end;
+}
+
+.phone-form.hidden~.button-ref-box {
+  display: flex;
+}
+
 .label {
   display: block;
   margin-bottom: 1rem;
@@ -235,7 +243,6 @@ button {
   display: flex;
 }
 
-
 .cell {
   box-sizing: border-box;
   width: 35px;
@@ -258,6 +265,23 @@ button {
   font-family: Roboto, Open-Sans, serif;
 }
 
+/* buttons for pin form */
+
+.button-ref-box {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  flex: 1;
+}
+
+.button-ref {
+  color: #FFF;
+  font-size: 0.875rem;
+  font-family: Roboto, Open-Sans, serif;
+  font-weight: 300;
+  text-decoration: underline;
+}
+
 /* read more block */
 
 .read-more-wrap {
@@ -269,7 +293,7 @@ button {
 
 .read-more-box {
   display: flex;
-  margin: 0 auto 2.5rem;
+  margin: 1rem auto 2.5rem;
   color: #8F8F8F;
 }
 
