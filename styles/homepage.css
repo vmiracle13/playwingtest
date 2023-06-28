@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
+
+body {
+  background-color: #1E2128;
+  margin: 0;
+  font-size: 16px;
+  font-family: 'Montserrat', Arial, Helvetica, Verdana, sans-serif;
+}
+
+/* reset the default styles of elements */
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* styles for home page */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background-color: #242632;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+}
+
+/* carousel */
+
+.carousel {
+  position: relative;
+  margin-top: 57px;
+}
+
+.gallery {
+  width: 100vw;
+  overflow: hidden;
+}
+
+.list {
+  display: flex;
+  width: 9999px;
+  transition: margin-left 250ms;
+}
+
+.slide {
+  display: flex;
+  width: 100vw;
+}
+
+.slide img {
+  height: 225px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.arrow {
+  display: block;
+  width: 30px;
+  position: absolute;
+  top: 50%;
+  font-size: 24px;
+  line-height: 24px;
+  color: #fff;
+  opacity: 0.8;
+  transform: translateY(-50%);
+}
+
+.arrow:focus {
+  outline: none;
+}
+
+.arrow:hover {
+  cursor: pointer;
+}
+
+.prev {
+  left: 7px;
+}
+
+.next {
+  right: 7px;
+}
+
+.dots {
+  display: flex;
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dot {
+  cursor: pointer;
+  height: 11px;
+  width: 11px;
+  margin: 0 6px;
+  background-color: #C4C4C4;
+  border-radius: 50%;
+  display: block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #fff;
+}
+
+.subscribe-button {
+  display: block;
+  width: 230px;
+  height: 60px;
+  margin: 1.25rem auto;
+  border-radius: 12px;
+  background-color: #BF2DE2;
+  box-shadow: 0px 5px 0px 0px #9E25BB;
+  color: #FFF;
+  font-size: 18px;
+  font-family: 'Montserrat', Arial, Helvetica, Verdana, sans-serif;
+  line-height: 140%;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.delimeter {
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(174, 211, 0, 0.00) 0%, #AED300 50.80%, rgba(174, 211, 0, 0.00) 100%);
+  border: none;
+}
+
+/* new games block */
+
+.games {
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+
+.games-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.games-title {
+  margin-right: 0.5rem;
+  color: #FFF;
+  font-size: 1rem;
+  font-family: 'Montserrat', Arial, Helvetica, Verdana, sans-serif;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.games-count {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  background: #AED300;
+  color: #111127;
+  font-size: 0.875rem;
+  line-height: 140%;
+}
+
+.games-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.list-element {
+  display: flex;
+}
+
+.list-element img {
+  max-width: 100%;
+}
+
+.more-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-top: 1.3rem;
+  color: #FFF;
+  font-family: 'Montserrat', Arial, Helvetica, Verdana, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.plus-icon {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0.7rem;
+  border-radius: 25px;
+  background-color: #BF2DE2;
+}
+
+/* footer block */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.4rem 0;
+}
+
+.button {
+  width: 140px;
+  height: 44px;
+  margin-bottom: 1.3rem;
+  background-color: #AED300;
+  color: #000;
+  border-radius: 9px;
+  font-family: 'Montserrat', Arial, Helvetica, Verdana, sans-serif;
+}
+
+.button:first-of-type {
+  margin-right: 1rem;
+}
+
+.footer-logo {
+  width: 139px;
+  height: 26px;
+}
+
+.copyright {
+  margin: 0.5rem 0;
+  color: #FFF;
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+.notification {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  margin: 0 0.7rem;
+  padding: 0 1.6rem;
+  border-radius: 12px;
+  opacity: 0.8999999761581421;
+  background: #AED300;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: #000;
+  text-align: center;
+  font-size: 0.875rem;
+  font-family: 'Montserrat', Arial, Helvetica, Verdana, sans-serif;
+}
