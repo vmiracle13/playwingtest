@@ -4,11 +4,13 @@
 body {
   margin: 0;
   background-color: #1E2128;
-  font-family: Inter, Arial, Helvetica, Verdana, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, Verdana, sans-serif;
   color: #fff;
   font-size: 16px;
   height: 100vh;
 }
+
+/* reset the default styles of elements */
 
 button {
   background-color: transparent;
@@ -98,7 +100,7 @@ button {
   color: #A4A4A4;
   text-align: center;
   font-size: 0.75rem;
-  font-family: Inter, Arial, Helvetica, Verdana, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, Verdana, sans-serif;
 }
 
 /* phone form */
@@ -150,7 +152,7 @@ button {
   padding-right: 40px;
   color: #818181;
   font-size: 0.875rem;
-  font-family: Roboto, Open-Sans, serif;
+  font-family: 'Roboto', 'Open-Sans', 'Times New Roman', serif;
   font-style: italic;
   font-weight: 300;
 }
@@ -167,7 +169,7 @@ button {
   background-color: #F8F7FF;
   color: #818181;
   font-size: 0.875em;
-  font-family: Roboto, Open-Sans, serif;
+  font-family: 'Roboto', 'Open-Sans', 'Times New Roman', serif;
   font-weight: 500;
 }
 
@@ -185,7 +187,7 @@ button {
 .iti__dial-code,
 .iti__country-name {
   color: #818181;
-  font-family: Roboto, Open-Sans, serif;
+  font-family: 'Roboto', 'Open-Sans', 'Times New Roman', serif;
 }
 
 .confirmed.active {
@@ -215,7 +217,7 @@ button {
   background-color: #797C7B;
   color: #fff;
   font-size: 1rem;
-  font-family: Roboto, Open-Sans, serif;
+  font-family: 'Roboto', 'Open-Sans', 'Times New Roman', serif;
   font-weight: 700;
 }
 
@@ -274,7 +276,7 @@ button {
   color: #9A9A9A;
   font-size: 0.75rem;
   text-align: center;
-  font-family: Roboto, Open-Sans, serif;
+  font-family: 'Roboto', 'Open-Sans', 'Times New Roman', serif;
 }
 
 /* buttons for pin form */
@@ -289,7 +291,7 @@ button {
 .button-ref {
   color: #FFF;
   font-size: 0.875rem;
-  font-family: Roboto, Open-Sans, serif;
+  font-family: 'Roboto', 'Open-Sans', 'Times New Roman', serif;
   font-weight: 300;
   text-decoration: underline;
 }
@@ -340,7 +342,7 @@ button {
   margin: 1.4rem 3rem;
   color: #EBEBEB;
   font-size: 0.75rem;
-  font-family: Roboto, Open-Sans, serif;
+  font-family: 'Roboto', 'Open-Sans', 'Times New Roman', serif;
 }
 
 .read-more-reference {
@@ -352,7 +354,7 @@ button {
 .footer {
   margin-top: auto;
   text-align: center;
-  font-family: Roboto, Open-Sans, serif;
+  font-family: 'Roboto', 'Open-Sans', 'Times New Roman', serif;
 }
 
 .nav {
