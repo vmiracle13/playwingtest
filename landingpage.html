@@ -40,18 +40,32 @@
 			<form class="phone-form">
 				<label class="label">Enter your phone number:</label>
 				<div class="phone-box">
-					<input class="phone" type="tel" name="phone" title="Required format XXXXXXXXX and the length of 9 numbers" />
+					<input class="phone" type="tel" name="phone" title="Required format XXXXXXXXX and the length of 9 numbers"
+						required />
 
 					<div class="confirmed">
 						<img src="./images/check.svg" alt="check icon" />
 					</div>
 				</div>
 
-				<button type="submit" class="submit-button" disabled onclick="submitForm()">GET OTP</button>
+				<button type="button" class="submit-button" disabled onclick="submitForm()">GET OTP</button>
 			</form>
 
 			<form class="pin-form">
-				Pin form
+				<label class="label">Enter PIN</label>
+
+				<div class="pin-box">
+					<img src="./images/padlock.svg" alt="secure" class="padlock-icon" />
+
+					<div class="pin-cells">
+						<input type="text" maxlength=1 required class="cell" />
+						<input type="text" maxlength=1 required class="cell" />
+						<input type="text" maxlength=1 required class="cell" />
+						<input type="text" maxlength=1 required class="cell" />
+					</div>
+				</div>
+
+				<button type="button" class="submit-button" disabled onclick="subscribe()">Subscribe</button>
 			</form>
 
 			<p class="rate">11.95 PKR/Day </p>
@@ -144,20 +158,22 @@
 			const hasNumbersOnly = /^\d+$/.test(phoneNumber);
 
 			const oneWarningAdded = document.querySelector('.warning');
+			const confirmedIcon = document.querySelector('.confirmed');
+			const submitButton = document.querySelector('.submit-button');
 
-			if (phoneNumber.length === 0 || !hasNumbersOnly) {
+			if (phoneNumber.length !== 9 || !hasNumbersOnly) {
 				if (oneWarningAdded) return;
-				const submitButton = document.querySelector('.submit-button');
+				const submitButton = document.querySelector('.phone-form .submit-button');
 				const warning = document.createElement('p');
 				warning.className = "warning";
 				warning.innerHTML = "Please enter the phone number of 9 digits and only with numbers";
 				submitButton.before(warning);
+				confirmedIcon.classList.remove('active');
+				submitButton.classList.remove('active');
 			}
 
 			if (hasNumbersOnly && phoneNumber.length === 9) {
 				if (oneWarningAdded) oneWarningAdded.remove();
-				const confirmedIcon = document.querySelector('.confirmed');
-				const submitButton = document.querySelector('.submit-button');
 				confirmedIcon.classList.add('active');
 				submitButton.classList.add('active');
 				submitButton.disabled = false;
@@ -165,8 +181,42 @@
 		}
 	</script>
 
-	<!-- The block to send the phone number to get a pin code -->
+
+	<!-- The block to validate the pin -->
 	<script>
+		const cells = document.querySelectorAll('.cell');
+		for (let cell of cells) {
+			cell.onblur = validatePin;
+		}
+
+		function validatePin() {
+			const submitButton = document.querySelector('.pin-form .submit-button');
+			const oneWarningAdded = document.querySelector('.warning');
+			const warning = document.createElement('p');
+			let valueCount = 0;
+
+			for (let cell of cells) {
+				valueCount = !!cell.value ? valueCount + 1 : valueCount;
+				if (!cell.value && !oneWarningAdded) {
+					warning.className = "warning";
+					warning.innerHTML = "Please fill all the digits with the received pin";
+					submitButton.before(warning);
+					submitButton.classList.remove('active');
+				}
+			}
+
+			if (valueCount === cells.length) {
+				submitButton.classList.add('active');
+				submitButton.disabled = false;
+				if (oneWarningAdded) {
+					oneWarningAdded.remove();
+				}
+			}
+		}
+	</script>
+
+	<script>
+		/* The block to send the phone number to get a pin code */
 		function submitForm() {
 			/*
 			Here we send a request to server to initiate an event of sending sms to the user.
@@ -175,6 +225,15 @@
 			we need to inform the user about it by displaying the corresponding message.
 			This case should be considered with the team and all the cases are described and performed in the application.
 			*/
+			const pinForm = document.querySelector('.pin-form');
+			const phoneForm = document.querySelector('.phone-form');
+			pinForm.classList.add('active');
+			phoneForm.classList.add('hidden');
+		}
+
+		/* forward to another page once a user is authorized */
+		function subscribe() {
+			window.location.href = "homepage.html";
 		}
 	</script>
 

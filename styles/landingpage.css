@@ -95,10 +95,15 @@ button {
 
 /* phone form */
 
-.phone-form {
+.phone-form,
+.pin-form {
   text-align: center;
   width: 308px;
   margin: auto;
+}
+
+.phone-form.hidden {
+  display: none;
 }
 
 .label {
@@ -111,7 +116,7 @@ button {
   position: relative;
 }
 
-.form .iti--separate-dial-code input,
+.phone-form .iti--separate-dial-code input,
 .phone::placeholder {
   text-align: center;
 }
@@ -122,6 +127,7 @@ button {
   background-color: #F8F7FF;
   border-radius: 6px;
   border: none;
+  text-align: center;
 }
 
 .phone::placeholder {
@@ -141,7 +147,7 @@ button {
   display: none;
 }
 
-.form .iti--separate-dial-code .iti__selected-flag {
+.phone-form .iti--separate-dial-code .iti__selected-flag {
   background-color: #F8F7FF;
   color: #818181;
   font-size: 0.875em;
@@ -200,6 +206,47 @@ button {
 .submit-button.active {
   background-color: #29D884;
   cursor: pointer;
+}
+
+/* pin-form */
+
+.pin-form {
+  display: none;
+}
+
+.pin-form.active {
+  display: block;
+}
+
+.pin-form .label {
+  text-align: center;
+}
+
+.pin-box {
+  display: flex;
+  justify-content: center;
+}
+
+.padlock-icon {
+  margin-right: 1rem;
+}
+
+.pin-cells {
+  display: flex;
+}
+
+
+.cell {
+  box-sizing: border-box;
+  width: 35px;
+  height: 35px;
+  margin-right: 0.875rem;
+  padding: 10px;
+  background: linear-gradient(#C9C9C9, #C9C9C9) center bottom 5px /calc(100% - 10px) 1px no-repeat;
+  background-color: #fff;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
 }
 
 /* rate text */
